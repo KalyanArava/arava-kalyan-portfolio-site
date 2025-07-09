@@ -23,7 +23,7 @@ const HeroSection = () => {
           <div className="mb-8 flex justify-center">
             <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl animate-pulse-glow">
               <img 
-                src="/lovable-uploads/44afc8c2-55ee-4a20-bc0c-9aa112b9ca79.png" 
+                src="/lovable-uploads/91021503-695b-4d00-b64f-89738917b7a0.png" 
                 alt="Arava Kalyan"
                 className="w-full h-full object-cover"
               />
