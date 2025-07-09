@@ -3,11 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system with new color palette */
+/* Design system with refined color palette */
 @layer base {
   :root {
-    --background: 224 176 178; /* Soft Rose Gray #E0B4B2 */
-    --foreground: 18 46 52; /* Rich Black-Blue #122E34 */
+    --background: 224 132 130; /* Refined Soft Rose #E08482 */
+    --foreground: 18 46 52; /* Dark Teal #122E34 */
 
     --card: 0 0% 100%;
     --card-foreground: 18 46 52;
@@ -16,7 +16,7 @@
     --popover-foreground: 18 46 52;
 
     --primary: 103 126 138; /* Muted Steel Blue #677E8A */
-    --primary-foreground: 224 176 178;
+    --primary-foreground: 224 132 130;
 
     --secondary: 171 175 181; /* Cool Light Gray #ABAFB5 */
     --secondary-foreground: 18 46 52;
@@ -25,10 +25,10 @@
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 98 35 71; /* Deep Plum #622347 */
-    --accent-foreground: 224 176 178;
+    --accent-foreground: 224 132 130;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 224 176 178;
+    --destructive-foreground: 224 132 130;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
@@ -38,25 +38,25 @@
   }
 
   .dark {
-    --background: 14 29 33; /* Dark Teal #0E1D21 */
-    --foreground: 224 176 178;
+    --background: 14 29 33; /* Rich Black-Blue #0E1D21 */
+    --foreground: 224 132 130;
     --card: 18 46 52;
-    --card-foreground: 224 176 178;
+    --card-foreground: 224 132 130;
     --popover: 18 46 52;
-    --popover-foreground: 224 176 178;
-    --primary: 224 176 178;
+    --popover-foreground: 224 132 130;
+    --primary: 224 132 130;
     --primary-foreground: 18 46 52;
     --secondary: 98 35 71;
-    --secondary-foreground: 224 176 178;
+    --secondary-foreground: 224 132 130;
     --muted: 98 35 71;
     --muted-foreground: 171 175 181;
     --accent: 103 126 138;
-    --accent-foreground: 224 176 178;
+    --accent-foreground: 224 132 130;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 224 176 178;
+    --destructive-foreground: 224 132 130;
     --border: 98 35 71;
     --input: 98 35 71;
-    --ring: 224 176 178;
+    --ring: 224 132 130;
   }
 }
 
@@ -70,7 +70,7 @@
   }
 }
 
-/* Custom animations */
+/* Enhanced animations with new color palette */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -88,8 +88,13 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(103, 126, 138, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(103, 126, 138, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(103, 126, 138, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(103, 126, 138, 0.8); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
 }
 
 .animate-float {
@@ -104,19 +109,71 @@
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(224, 132, 130, 0.4),
+    transparent
+  );
+  background-size: 200px 100%;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom gradient backgrounds */
+/* Enhanced gradient backgrounds */
 .gradient-bg {
-  background: linear-gradient(135deg, hsl(103 126 138) 0%, hsl(171 175 181) 100%);
+  background: linear-gradient(135deg, 
+    hsl(103 126 138) 0%, 
+    hsl(224 132 130) 50%, 
+    hsl(98 35 71) 100%
+  );
+}
+
+.gradient-bg-alt {
+  background: linear-gradient(45deg, 
+    hsl(18 46 52) 0%, 
+    hsl(98 35 71) 50%, 
+    hsl(14 29 33) 100%
+  );
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, hsl(103 126 138) 0%, hsl(171 175 181) 100%);
+  background: linear-gradient(135deg, 
+    hsl(103 126 138) 0%, 
+    hsl(224 132 130) 50%, 
+    hsl(98 35 71) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.gradient-border {
+  border-image: linear-gradient(135deg, 
+    hsl(103 126 138) 0%, 
+    hsl(224 132 130) 50%, 
+    hsl(98 35 71) 100%
+  ) 1;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(224, 132, 130, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(224, 132, 130, 0.2);
+}
+
+/* Elegant hover effects */
+.elegant-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elegant-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(98, 35, 71, 0.2);
 }

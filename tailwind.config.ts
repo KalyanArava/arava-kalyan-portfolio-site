@@ -63,13 +63,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors from your palette
-				'soft-rose': '#E0B4B2',
-				'cool-gray': '#ABAFB5',
-				'steel-blue': '#677E8A',
-				'deep-plum': '#622347',
-				'dark-teal': '#122E34',
-				'rich-black': '#0E1D21'
+				// Refined color palette with beautiful naming
+				'coral-blush': '#E08482',    // Refined soft rose
+				'silver-mist': '#ABAFB5',    // Cool light gray
+				'slate-storm': '#677E8A',    // Muted steel blue
+				'wine-velvet': '#622347',    // Deep plum
+				'ocean-depth': '#122E34',    // Dark teal
+				'midnight-ink': '#0E1D21'    // Rich black-blue
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -92,11 +92,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200px 0' },
+					'100%': { backgroundPosition: 'calc(200px + 100%) 0' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 20px rgba(103, 126, 138, 0.4)' },
+					'50%': { boxShadow: '0 0 40px rgba(103, 126, 138, 0.8)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shimmer': 'shimmer 2s linear infinite',
+				'glow': 'glow 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-elegant': 'linear-gradient(135deg, var(--tw-gradient-stops))'
 			}
 		}
 	},
