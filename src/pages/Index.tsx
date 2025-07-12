@@ -1,5 +1,6 @@
 
 import React from 'react';
+import ThemeToggle from '@/components/ThemeToggle';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import EducationSection from '@/components/EducationSection';
@@ -11,7 +12,8 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background transition-colors duration-300">
+      <ThemeToggle />
       <HeroSection />
       <AboutSection />
       <EducationSection />
