@@ -13,7 +13,9 @@ const ProjectsSection = () => {
       icon: ShoppingCart,
       color: "text-primary",
       bgColor: "bg-primary/10",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop"
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
+      liveUrl: "https://ecommerce-demo.vercel.app",
+      codeUrl: "https://github.com/yourusername/ecommerce-website"
     },
     {
       title: "Bank Management System",
@@ -22,7 +24,9 @@ const ProjectsSection = () => {
       icon: Building2,
       color: "text-secondary",
       bgColor: "bg-secondary/10",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop"
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=250&fit=crop",
+      liveUrl: "https://bank-management-demo.vercel.app",
+      codeUrl: "https://github.com/yourusername/bank-management-system"
     },
     {
       title: "File OTP Generator Tool",
@@ -31,9 +35,19 @@ const ProjectsSection = () => {
       icon: Shield,
       color: "text-accent",
       bgColor: "bg-accent/10",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop"
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop",
+      liveUrl: "https://otp-generator-demo.vercel.app",
+      codeUrl: "https://github.com/yourusername/file-otp-generator"
     }
   ];
+
+  const handleProjectClick = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleViewMoreProjects = () => {
+    window.open('https://github.com/yourusername', '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <section id="projects" className="py-20 bg-background">
@@ -90,6 +104,7 @@ const ProjectsSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="flex-1 hover:bg-primary hover:text-white hover:border-primary transition-all"
+                    onClick={() => handleProjectClick(project.liveUrl)}
                   >
                     <ExternalLink size={16} className="mr-2" />
                     Live Demo
@@ -98,6 +113,7 @@ const ProjectsSection = () => {
                     variant="outline" 
                     size="sm" 
                     className="flex-1 hover:bg-secondary hover:text-white hover:border-secondary transition-all"
+                    onClick={() => handleProjectClick(project.codeUrl)}
                   >
                     <Github size={16} className="mr-2" />
                     Code
@@ -110,7 +126,10 @@ const ProjectsSection = () => {
 
         {/* View More Projects Button */}
         <div className="text-center mt-12">
-          <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-3 text-lg rounded-full transition-all hover:scale-105">
+          <Button 
+            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-3 text-lg rounded-full transition-all hover:scale-105"
+            onClick={handleViewMoreProjects}
+          >
             View More Projects on GitHub
           </Button>
         </div>
